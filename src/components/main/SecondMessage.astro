@@ -1,0 +1,26 @@
+---
+
+---
+
+<div class="main-text-container" id="secondMainText">
+    <p class="principal-text-bg">🤝 A pleasure to meet you</p>
+    <p class="principal-text-bg" id="nameText">!</p>
+    <p class="principal-text-bg">Is there something in particular you</p>
+    <p class="principal-text-bg">Wanna know?</p>
+</div>
+
+<script> 
+    import { isName, isMessageFlag } from "../../states/globalState.js";
+
+    isMessageFlag.subscribe( flag => {
+        if(flag == 0)
+            document.getElementById('secondMainText').style.display = 'none';
+        else if(flag == 1)
+            document.getElementById('secondMainText').style.display = 'block';
+    });
+
+    isName.subscribe (name => {
+        document.getElementById('nameText').innerText = name + "!";
+    })
+
+</script>

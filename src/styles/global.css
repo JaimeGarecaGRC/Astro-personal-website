@@ -34,6 +34,12 @@ body {
     color: #F1D302;
 }
 
+.principal-text-emoji {
+    font-size: 74px;
+    color: #FDFFFC;
+    cursor: pointer;
+}
+
 .principal-input-bg {
     width: 700px;
     border: none;

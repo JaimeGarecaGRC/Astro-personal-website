@@ -1,27 +1,37 @@
 ---
 ---
 
-<div class="main-text-container">
+<div class="main-text-container" id="firstMessageId">
     <h1 class="principal-text-bg">👋 HI!</h1>
     <p class="principal-text-bg">My name is Jaime Gareca</p>
     <p class="principal-text-bg">A <span class="principal-text-bg emphasized-text-bg">Full Stack Developer</span></p>
     <p class="principal-text-bg">Who are you?</p>
-    <p id="test" class="principal-text-bg">a</p>
     <input class="emphasized-text-bg principal-input-bg" id="inputName"/>
-    <span class="principal-text-bg">  🖉</span>
+    <span class="principal-text-emoji" id="emojiNameInput">  🖉</span>
 </div>
 
 <script> 
-    import { isName } from "../../states/nameState.js";
+    import { isName, isMessageFlag } from "../../states/globalState.js";
 
     function changeName(newValue) {
         isName.set(newValue);
     }
 
+    function changeMessageFlag() {
+        isMessageFlag.set(1);
+        document.getElementById('firstMessageId').style.display = 'none';
+
+    }
+
     isName.subscribe( name => {
         document.getElementById('inputName').value = name;
-        document.getElementById('test').textContent = name;
+        if(name == "")
+            document.getElementById('emojiNameInput').textContent ="  🖉"
+        else
+            document.getElementById('emojiNameInput').textContent ="  ✔️"
     })
+
+    document.getElementById('emojiNameInput').addEventListener('click', changeMessageFlag);
 
     document.getElementById('inputName').addEventListener('input', function (event) {
         changeName(event.target.value);
