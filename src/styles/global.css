@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #0A090C;
+    color: #FDFFFC;
+    font-family: 'MYANMAR KHYAY', sans-serif;
+}
+
+.main-text-container {
+    position: absolute;
+    bottom: 100px;
+    left: 80px;
+}
+
+.principal-text-bg {
+    font-size: 70px;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+@font-face {
+    font-family: 'MYANMAR KHYAY';
+    src: url('/fonts/Khyay-Regular.ttf') format('ttf');
+    /* font-weight: normal;
+    font-style: normal;
+    font-display: swap; */
+}
+
+.emphasized-text-bg {
+    font-size: 74px;
+    color: #F1D302;
+}
+
+.principal-input-bg {
+    width: 700px;
+    border: none;
+    border-bottom: 4px solid #FDFFFC;
+    background-color: transparent;
+    outline: none;
+}

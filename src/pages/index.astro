@@ -1,5 +1,5 @@
 ---
-
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -8,9 +8,15 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Welcome!</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="main-text-container">
+			<h1 class="principal-text-bg">👋 HI!</h1>
+			<p class="principal-text-bg">My name is Jaime Gareca</p>
+			<p class="principal-text-bg">A <span class="principal-text-bg emphasized-text-bg">Full Stack Developer</span></p>
+			<p class="principal-text-bg">Who are you?</p>
+			<input class="emphasized-text-bg principal-input-bg"/><span class="principal-text-bg">  ✔️✏️</span>
+		</div>
 	</body>
 </html>
