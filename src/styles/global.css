@@ -9,10 +9,35 @@ body {
     font-family: 'MYANMAR KHYAY', sans-serif;
 }
 
+button {
+    background-color: #F1D302;
+    min-height: 70px;
+    padding: 0 90px;
+    margin: 15px 15px;
+    border-radius: 60px;
+    border: none;
+    font-size: 40px;
+    cursor: pointer; 
+    white-space: nowrap;
+    flex-grow: 1; 
+}
+
+button:hover {
+    background-color: #CAAF02;
+}
+
+.min-buttons-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .main-text-container {
     position: absolute;
     bottom: 100px;
-    left: 80px;
+    left: 5%;
+    width: 90%;
 }
 
 .principal-text-bg {

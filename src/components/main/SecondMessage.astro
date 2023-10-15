@@ -3,24 +3,67 @@
 ---
 
 <div class="main-text-container" id="secondMainText">
-    <p class="principal-text-bg">🤝 A pleasure to meet you</p>
-    <p class="principal-text-bg" id="nameText">!</p>
-    <p class="principal-text-bg">Is there something in particular you</p>
-    <p class="principal-text-bg">Wanna know?</p>
+    <div id="minimizedText">
+        <p class="principal-text-bg">🤝 A pleasure to meet you</p>
+        <p class="principal-text-bg emphasized-text-bg" id="nameText">!</p>
+        <p class="principal-text-bg">Is there something in particular you</p>
+        <p class="principal-text-bg">Wanna know?</p>
+    </div>
+    <div id="maximizedText">
+        <p class="principal-text-bg">😄 Feel free to ask!</p>
+    </div>
+    <div >
+        <div class="min-buttons-group" id="minimizedButtons">
+            <button type="button">How to contact U?</button>
+            <button type="button">What technologies do you use?</button>
+            <button type="button" id="maximizeButton">More...</button>
+        </div>
+        <div class="min-buttons-group" id="maximizedButtons">
+            <button type="button">Can I see Ur portfolio?</button>
+            <button type="button">Can you tell me more about yourself?</button>
+            <button type="button">What learning resources do you use to stay updated?</button>
+            <button type="button" id="minimizeButton">Close...</button>
+        </div>
+    <div>
 </div>
 
 <script> 
     import { isName, isMessageFlag } from "../../states/globalState.js";
 
+    document.getElementById('maximizedText').style.display = 'none';
+    document.getElementById('maximizedButtons').style.display = 'none';
+    document.getElementById('maximizeButton').style.display = 'block';
+    
+    function setMaxmizedButtons() {
+        document.getElementById('minimizedText').style.display = 'none';
+        document.getElementById('maximizedText').style.display = 'block';
+        document.getElementById('maximizedButtons').style.display = 'block';
+        document.getElementById('maximizeButton').style.display = 'none';
+    }
+
+    function setMinimizeButtons() {
+        document.getElementById('minimizedText').style.display = 'block';
+        document.getElementById('maximizedText').style.display = 'none';
+        document.getElementById('maximizedButtons').style.display = 'none';
+        document.getElementById('maximizeButton').style.display = 'block';
+    }
+
     isMessageFlag.subscribe( flag => {
         if(flag == 0)
             document.getElementById('secondMainText').style.display = 'none';
-        else if(flag == 1)
+        else if(flag == 1){
             document.getElementById('secondMainText').style.display = 'block';
+        }
+        else if(flag == 2){
+            document.getElementById('secondMainText').style.display = 'block';
+            
+        }
     });
 
     isName.subscribe (name => {
         document.getElementById('nameText').innerText = name + "!";
     })
 
+    document.getElementById('maximizeButton').addEventListener('click', setMaxmizedButtons);
+    document.getElementById('minimizeButton').addEventListener('click', setMinimizeButtons);
 </script>
