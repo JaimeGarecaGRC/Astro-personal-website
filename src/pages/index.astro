@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import FirstMessage from '../components/main/FirstMessage.astro';
 ---
 
 <html lang="en">
@@ -11,12 +12,6 @@ import '../styles/global.css';
 		<title>Welcome!</title>
 	</head>
 	<body>
-		<div class="main-text-container">
-			<h1 class="principal-text-bg">👋 HI!</h1>
-			<p class="principal-text-bg">My name is Jaime Gareca</p>
-			<p class="principal-text-bg">A <span class="principal-text-bg emphasized-text-bg">Full Stack Developer</span></p>
-			<p class="principal-text-bg">Who are you?</p>
-			<input class="emphasized-text-bg principal-input-bg"/><span class="principal-text-bg">  ✔️✏️</span>
-		</div>
+		<FirstMessage/>
 	</body>
 </html>
